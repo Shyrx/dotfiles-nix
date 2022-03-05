@@ -86,7 +86,7 @@ in {
         }
         {
           # TODO add refresh of bar
-          command = "xbacklight --set 70";
+          command = "xbacklight -set 70";
           always = true;
           notification = true;
         }
@@ -118,11 +118,10 @@ in {
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
 
-        "XF86MonBrightnessDown" = "exec brightnessctl -c backlight set 4%-";
-        "XF86MonBrightnessUp" = "exec brightnessctl -c backlight set 4%+";
-
-        "${mod}+F1" =  "exec light -U 5";
-        "${mod}+F2" = "exec light -A 5";
+        "XF86MonBrightnessDown" = "exec xbacklight -dec 5";
+        "XF86MonBrightnessUp" = "exec xbacklight -inc 5";
+        "${mod}+F1" = "exec xbacklight -dec 5";
+        "${mod}+F2" = "exec xbacklight -inc 5";
 
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
