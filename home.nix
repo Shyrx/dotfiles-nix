@@ -6,7 +6,7 @@
 
   # Imports configurations from other files/directories
   imports = [
-    ./system
+    ./session
     ./software
     ./packages.nix
   ];
