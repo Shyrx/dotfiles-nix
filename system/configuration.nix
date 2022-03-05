@@ -21,7 +21,7 @@
       options = "--delete-older-than 7d";
     };
     # Detects files with identical content in store and replace them with hard links to a single copy
-    # autoOptimiseStore = true;
+    autoOptimiseStore = true;
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -55,12 +55,12 @@
   time.timeZone = "Europe/Paris";
   time.hardwareClockInLocalTime = true;
 
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   # earlySetup = true;
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "fr";
-  # };
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    # earlySetup = true;
+    font = "Lat2-Terminus16";
+    keyMap = "fr";
+  };
 
   # Enable the X11 windowing system.
   services.xserver = {
