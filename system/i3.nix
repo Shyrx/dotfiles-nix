@@ -2,7 +2,7 @@
 
 let
   mod = "Mod4";
-  logoutMode = "[L]ogout, [S]uspend, [P]ower off, [R]eboot";
+  logoutMode = "[L]ogout, [l]ock, [p]ower off, [r]eboot";
 in {
   xsession.scriptPath = "~/.config/.xsession";
 
@@ -21,6 +21,12 @@ in {
         followMouse = false;
         mouseWarping = false;
         forceWrapping = false;
+      };
+
+      gaps = {
+        inner = 5;
+        outer = 0;
+        smartGaps = true;
       };
 
       colors = {
@@ -101,6 +107,23 @@ in {
         "${mod}+f" = "exec firefox";
         "${mod}+x" = "exec emacsclient -c -a 'emacs'";
 
+        "${mod}+Shift+P" = "exec flameshot gui -p ~/Screen";
+        "Print" = "exec flameshot gui -p ~/Screen";
+
+        "${mod}+Shift+e" = ''mode "${logoutMode}"'';
+	      "${mod}+Shift+r" = "restart";
+
+        # TODO Add refresh of status bar
+        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
+
+        "XF86MonBrightnessDown" = "exec brightnessctl -c backlight set 4%-";
+        "XF86MonBrightnessUp" = "exec brightnessctl -c backlight set 4%+";
+
+        "${mod}+F1" =  "exec light -U 5";
+        "${mod}+F2" = "exec light -A 5";
+
         "${mod}+h" = "focus left";
         "${mod}+j" = "focus down";
         "${mod}+k" = "focus up";
@@ -130,32 +153,11 @@ in {
 	      "${mod}+Shift+7" = "move container to workspace number 7";
 	      "${mod}+Shift+8" = "move container to workspace number 8";
 	      "${mod}+Shift+9" = "move container to workspace number 9";
-
-        "${mod}+Shift+e" = ''mode "${logoutMode}"'';
-	      "${mod}+Shift+r" = "restart";
-
-        "${mod}+Shift+Left" = "resize shrink width 5 px or 5 ppt";
-        "${mod}+Shift+Down" = "resize grow height 5 px or 5 ppt";
-        "${mod}+Shift+Up" = "resize shrink height 5 px or 5 ppt";
-        "${mod}+Shift+Right" =  "resize grow width 5 px or 5 ppt";
-
-        # TODO Add refresh of status bar
-        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
-        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
-        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
-
-        "XF86MonBrightnessDown" = "exec brightnessctl -c backlight set 4%-";
-        "XF86MonBrightnessUp" = "exec brightnessctl -c backlight set 4%+";
-
-        "${mod}+F1" =  "exec light -U 5";
-        "${mod}+F2" = "exec light -A 5";
-
-        "${mod}+Shift+P" = "exec flameshot gui -p ~Screen";
-        "Print" = "exec flameshot gui -p ~/Screen";
       };
 
       assigns = {
         "4" = [{ class = "Thunderbird"; }];
+        # FIXME discord and slack are assigned on two different desktop, both numbered 5
         "5" = [{ class = "discord"; } { class = "Slack"; }];
         # TODO add Spotify to 6
       };
@@ -169,16 +171,10 @@ in {
         in
           lib.mkOptionDefault {
             "${logoutMode}" = makeModeBindings {
-              "l" = "exec --no-startup-id i3-msg exit, mode default";
-              "s" = "exec --no-startup-id betterlockscreen -l, mode default";
+              "Shift+l" = "exec --no-startup-id i3-msg exit, mode default";
+              "l" = "exec --no-startup-id betterlockscreen -l, mode default";
               "p" = "exec --no-startup-id systemctl poweroff, mode default";
               "r" = "exec --no-startup-id systemctl reboot, mode default";
-            };
-            "Resize" = makeModeBindings {
-              "h" = "";
-              "j" = "";
-              "k" = "";
-              "l" = "";
             };
           };
     };
