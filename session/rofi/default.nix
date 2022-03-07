@@ -14,8 +14,13 @@
     cycle = true;
 
     extraConfig = {
-      show-icons = true;
+      show-icons = false;
       icon-them = "Dracula";
     };
+
+    # themes taken from https://github.com/lr-tech/rofi-themes-collection
+    theme = ./rounded-orange-dark.rasi;
   };
+
+  home.file.".config/rofi/rounded-common.rasi".source = ./rounded-common.rasi;
 }

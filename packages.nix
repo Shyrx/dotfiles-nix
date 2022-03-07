@@ -14,6 +14,7 @@
     clang-tools
     cmake
     discord
+    docker
     evince # pdf
     fd # faster find, used for doom
     feh # background image
@@ -23,6 +24,7 @@
     gnumake
     gnutar
     htop # Interactive process viewer
+    i3status-rust # bar
     i3wsr # rename workspace
     man-pages
     man-pages-posix
@@ -38,6 +40,7 @@
     thunderbird
     tree
     unzip
+    virtualenv
     xss-lock
     zip
   ];

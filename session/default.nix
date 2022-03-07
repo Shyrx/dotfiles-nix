@@ -2,8 +2,8 @@
 
 {
   imports = [
+    ./rofi
+    ./bar.nix
     ./i3.nix
-    ./rofi.nix
-    ./polybar
   ];
 }

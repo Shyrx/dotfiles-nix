@@ -47,9 +47,19 @@ in {
         };
       };
 
-      bars = [
+      bars =
+        let
+          barConfigPath =
+            config.xdg.configFile."i3status-rust/config-top.toml".target;
+          in [
         {
+          statusCommand = "i3status-rs ${barConfigPath}";
           position = "top";
+
+          fonts = {
+            names = [ "DejaVuSansMono" "FontAwesome5Free" ];
+            size = 7.0;
+          };
         }
       ];
 
@@ -157,7 +167,8 @@ in {
       assigns = {
         "4" = [{ class = "Thunderbird"; }];
         # FIXME discord and slack are assigned on two different desktop, both numbered 5
-        "5" = [{ class = "discord"; } { class = "Slack"; }];
+        "5" = [{ class = "discord"; }];
+        "6" = [{ class = "Slack"; }];
         # TODO add Spotify to 6
       };
 
