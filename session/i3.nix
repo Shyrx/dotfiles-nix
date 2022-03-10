@@ -17,6 +17,11 @@ in {
       window.border = 1;
       workspaceAutoBackAndForth = true;
 
+      fonts = {
+        names = [ "DejaVuSansMono" "FontAwesome5Free" ];
+        size = 9.0;
+      };
+
       focus = {
         followMouse = false;
         mouseWarping = false;
@@ -76,7 +81,7 @@ in {
         }
         {
           command = "${pkgs.i3wsr}/bin/i3wsr --remove-duplicates";
-          always = false;
+          always = true;
           notification = true;
         }
         {
