@@ -58,7 +58,7 @@ in {
 
           fonts = {
             names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-            size = 7.0;
+            size = 9.0;
           };
         }
       ];
@@ -66,7 +66,7 @@ in {
       startup = [
         {
           command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
-          always = true;
+          always = false;
           notification = true;
         }
         {
@@ -76,12 +76,12 @@ in {
         }
         {
           command = "${pkgs.i3wsr}/bin/i3wsr --remove-duplicates";
-          always = true;
+          always = false;
           notification = true;
         }
         {
           command = "${pkgs.numlockx}/bin/numlockx on";
-          always = true;
+          always = false;
           notification = true;
         }
         {
@@ -91,18 +91,17 @@ in {
         }
         {
           command = "${pkgs.emacs}/bin/emacs --daemon &";
-          always = true;
+          always = false;
           notification = true;
         }
         {
-          # TODO add refresh of bar
           command = "xbacklight -set 70";
-          always = true;
+          always = false;
           notification = true;
         }
         {
           command = "${pkgs.flameshot}/bin/flameshot";
-          always = true;
+          always = false;
           notification = true;
         }
       ];
