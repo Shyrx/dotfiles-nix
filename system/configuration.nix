@@ -97,6 +97,10 @@
     libinput.enable = true;
   };
 
+  services.logind = {
+    lidSwitch = "lock";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shyrx = {
     isNormalUser = true;

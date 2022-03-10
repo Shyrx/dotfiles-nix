@@ -5,5 +5,6 @@
     ./rofi
     ./bar.nix
     ./i3.nix
+    ./locker.nix
   ];
 }
