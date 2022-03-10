@@ -65,7 +65,7 @@
           {
             block = "time";
             interval = 5;
-            format = "%a %d/%m %T";
+            format = "%a %d/%m %H:%M";
             locale = "fr_FR";
             timezone = "Europe/Paris";
           }
