@@ -97,13 +97,6 @@
     libinput.enable = true;
   };
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  documentation.dev.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shyrx = {
     isNormalUser = true;
@@ -119,6 +112,7 @@
     firefox
     git
     networkmanagerapplet
+    tlp # Power managment optimization
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     xorg.xbacklight
@@ -137,8 +131,19 @@
    };
    users.extraGroups.vboxusers.members = [ "shyrx" ];
 
+  # Enable tlp for power managment
+  services.tlp.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  # Enable sound
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+  # Enable bluetootf
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+  # More docs
+  documentation.dev.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
