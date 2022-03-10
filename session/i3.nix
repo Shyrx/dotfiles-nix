@@ -168,11 +168,12 @@ in {
 	      "${mod}+Shift+9" = "move container to workspace number 9";
       };
 
+      # FIXME not working correctly becaause i3wsr rename workspace
       assigns = {
-        "4" = [{ class = "Thunderbird"; }];
+        #"4" = [{ class = "Thunderbird"; }];
         # FIXME discord and slack are assigned on two different desktop, both numbered 5
-        "5" = [{ class = "discord"; }];
-        "6" = [{ class = "Slack"; }];
+        #"5" = [{ class = "discord"; }];
+        #"6" = [{ class = "Slack"; }];
         # TODO add Spotify to 6
       };
 
