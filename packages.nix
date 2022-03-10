@@ -23,12 +23,10 @@
     gcc
     gnumake
     gnutar
-    htop # Interactive process viewer
     i3status-rust # bar
     i3wsr # rename workspace
     man-pages
     man-pages-posix
-    ncurses # required by htop
     pandoc # convert documents
     python3
     qemu # machine emulator and virtualizer
@@ -41,8 +39,8 @@
     tree
     unzip
     virtualenv
-    xss-lock
     zip
+    zsh
   ];
 
 }
