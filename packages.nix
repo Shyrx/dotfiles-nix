@@ -10,7 +10,6 @@
     binutils
     blueman # graphical bluetooth manager
     bluez # bluetooth
-    brightnessctl # let there be light... or not
     clang-tools
     cmake
     discord
