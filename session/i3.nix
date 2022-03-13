@@ -187,7 +187,7 @@ in {
           lib.mkOptionDefault {
             "${logoutMode}" = makeModeBindings {
               "Shift+l" = "exec --no-startup-id i3-msg exit, mode default";
-              "l" = "exec --no-startup-id betterlockscreen -l, mode default";
+              "l" = "exec --no-startup-id betterlockscreen -l --off 360, mode default";
               "p" = "exec --no-startup-id systemctl poweroff, mode default";
               "r" = "exec --no-startup-id systemctl reboot, mode default";
             };
