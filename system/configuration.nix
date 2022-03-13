@@ -42,6 +42,7 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.wlo1.useDHCP = true;
+  networking.interfaces.eno1.useDHCP = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -103,13 +104,12 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    brightnessctl
     emacs
     firefox
     git
     networkmanagerapplet
     tlp # Power managment optimization
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     xorg.xbacklight
   ];
@@ -131,10 +131,12 @@
   services.tlp.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  # Enable Udisks, a daemon for disks manipulation
+  services.udisks2.enable = true;
   # Enable sound
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  # Enable bluetootf
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   # More docs
