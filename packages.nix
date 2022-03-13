@@ -20,12 +20,14 @@
     flameshot # screenshot
     font-awesome
     gcc
+    gimp
     gnumake
     gnutar
     i3status-rust # bar
     i3wsr # rename workspace
     man-pages
     man-pages-posix
+    numlockx
     pandoc # convert documents
     python3
     qemu # machine emulator and virtualizer
@@ -36,6 +38,7 @@
     teams
     thunderbird
     tree
+    udiskie # Udisk front-end
     unzip
     virtualenv
     zip
