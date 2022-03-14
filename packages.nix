@@ -28,19 +28,24 @@
     man-pages
     man-pages-posix
     numlockx
-    pandoc # convert documents
+    pandoc # Convert documents
     python3
-    qemu # machine emulator and virtualizer
-    ripgrep # better grep, used for doom
-    rofi # another dmenu
+    qemu # Machine emulator and virtualizer
+    ripgrep # Better grep, used for doom
+    rofi # Another dmenu
     slack
     spotify # Music
     teams
     thunderbird
     tree
     udiskie # Udisk front-end
+    unrar
     unzip
+    usbutils
+    util-linux
     virtualenv
+    vlc
+    xfce.xfburn # Burner
     zip
     zsh
   ];
