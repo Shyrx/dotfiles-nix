@@ -108,7 +108,9 @@
     firefox
     git
     networkmanagerapplet
+    ntfs3g # Used by udiskie
     tlp # Power managment optimization
+    udiskie # Auto-mounter for external disk
     vim
     wget
     xorg.xbacklight

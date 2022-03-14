@@ -39,7 +39,6 @@
     teams
     thunderbird
     tree
-    udiskie # Udisk front-end
     unrar
     unzip
     usbutils
