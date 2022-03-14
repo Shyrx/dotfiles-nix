@@ -70,23 +70,8 @@ in {
 
       startup = [
         {
-          command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
-          always = false;
-          notification = true;
-        }
-        {
           command = "${pkgs.feh}/bin/feh --bg-scale ~/.config/background.png";
           always = true;
-          notification = true;
-        }
-        {
-          command = "${pkgs.i3wsr}/bin/i3wsr --remove-duplicates";
-          always = true;
-          notification = true;
-        }
-        {
-          command = "${pkgs.numlockx}/bin/numlockx on";
-          always = false;
           notification = true;
         }
         {
@@ -95,17 +80,22 @@ in {
           notification = true;
         }
         {
-          command = "${pkgs.emacs}/bin/emacs --daemon &";
-          always = false;
-          notification = true;
-        }
-        {
           command = "xbacklight -set 70";
           always = false;
           notification = true;
         }
         {
-          command = "${pkgs.flameshot}/bin/flameshot";
+          command = "${pkgs.numlockx}/bin/numlockx on";
+          always = false;
+          notification = true;
+        }
+        {
+          command = "${pkgs.i3wsr}/bin/i3wsr --remove-duplicates";
+          always = true;
+          notification = true;
+        }
+        {
+          command = "${pkgs.emacs}/bin/emacs --daemon &";
           always = false;
           notification = true;
         }
@@ -170,7 +160,7 @@ in {
 
       # FIXME not working correctly becaause i3wsr rename workspace
       assigns = {
-        #"4" = [{ class = "Thunderbird"; }];
+        "4" = [{ class = "Thunderbird"; }];
         # FIXME discord and slack are assigned on two different desktop, both numbered 5
         #"5" = [{ class = "discord"; }];
         #"6" = [{ class = "Slack"; }];
