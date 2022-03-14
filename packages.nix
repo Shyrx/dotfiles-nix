@@ -29,6 +29,7 @@
     man-pages-posix
     numlockx
     pandoc # Convert documents
+    playerctl # Utility for controlling media players
     python3
     qemu # Machine emulator and virtualizer
     ripgrep # Better grep, used for doom
