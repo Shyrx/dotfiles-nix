@@ -7,10 +7,6 @@
     terminal = "alacritty";
     location = "center";
 
-    plugins = [
-      # TODO search existing plugins
-    ];
-
     cycle = true;
 
     extraConfig = {
@@ -19,8 +15,9 @@
     };
 
     # themes taken from https://github.com/lr-tech/rofi-themes-collection
-    theme = ./rounded-orange-dark.rasi;
+    theme = ./launcher.rasi;
   };
 
-  home.file.".config/rofi/rounded-common.rasi".source = ./rounded-common.rasi;
+  home.file.".config/rofi/rounded-orange-dark.rasi".source = ./rounded-orange-dark.rasi;
+  home.file.".config/rofi/colors.rasi".source = ./colors.rasi;
 }

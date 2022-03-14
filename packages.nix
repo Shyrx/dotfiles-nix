@@ -23,12 +23,14 @@
     gimp
     gnumake
     gnutar
+    htop
     i3status-rust # bar
     i3wsr # rename workspace
     man-pages
     man-pages-posix
     numlockx
     pandoc # Convert documents
+    picom # Compositing manager for X servers
     playerctl # Utility for controlling media players
     python3
     qemu # Machine emulator and virtualizer
@@ -45,7 +47,6 @@
     util-linux
     virtualenv
     vlc
-    xfce.xfburn # Burner
     zip
     zsh
   ];

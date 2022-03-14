@@ -3,5 +3,6 @@
 {
   imports = [
     ./udisk.nix
+    ./picom.nix
   ];
 }
