@@ -6,9 +6,11 @@
 }
 
 window {
-    location:       center;
-    anchor:         center;
-    width:          30%;
+    location:           center;
+    anchor:             center;
+    width:              30%;
+
+    border-radius:      24px;
 
     background-color:   @dark-grey;
 }
@@ -18,24 +20,24 @@ mainbox {
 }
 
 inputbar {
-    background-color:   @bg1;
+    background-color:   @grey2;
     border-color:       @orange;
 
-    border:         2px;
-    border-radius:  16px;
+    border:             2px;
+    border-radius:      16px;
 
-    padding:    8px 16px;
-    spacing:    8px;
-    children:   [ prompt, entry ];
+    padding:            8px 16px;
+    spacing:            8px;
+    children:           [ prompt, entry, num-filtered-rows ];
 }
 
 prompt {
-    text-color: @fg2;
+    text-color: @light-grey;
 }
 
 entry {
     placeholder:        "Search";
-    placeholder-color:  @grey;
+    placeholder-color:  @grey1;
 }
 
 message {
@@ -53,7 +55,7 @@ listview {
     background-color:   transparent;
 
     margin:     12px 0 0;
-    lines:      8;
+    lines:      5;
     columns:    1;
 
     fixed-height: false;
@@ -65,14 +67,9 @@ element {
     border-radius:  16px;
 }
 
-element selected normal, element selected active {
+element.selected {
     background-color:   @orange;
     text-color:         @dark-grey;
-}
-
-element-icon {
-    size:           1em;
-    vertical-align: 0.5;
 }
 
 element-text {

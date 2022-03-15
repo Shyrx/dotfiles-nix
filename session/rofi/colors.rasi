@@ -5,7 +5,9 @@
   bg:           #000000; /* background */
   orange:       #D66B00;
   white:        #DDDDDD;
-  light-grey:   #969696;
+  light-grey:   #A0A0A0;
+  grey1:        #606060;
   grey:         #404040;
+  grey2:        #303030;
   dark-grey:    #202020;
 }

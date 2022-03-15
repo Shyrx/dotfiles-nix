@@ -9,11 +9,6 @@
 
     cycle = true;
 
-    extraConfig = {
-      show-icons = false;
-      icon-them = "Dracula";
-    };
-
     # themes taken from https://github.com/lr-tech/rofi-themes-collection
     theme = ./launcher.rasi;
   };
