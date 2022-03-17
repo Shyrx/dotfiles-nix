@@ -144,6 +144,24 @@
   # More docs
   documentation.dev.enable = true;
 
+  # Logging config for journalctl
+  # Log levels are: emerg - alert - crit - err - warning - notice - info - debug
+  # Nothing is configured to be redirected to Syslog and Console so they should
+  # be useless.
+  #
+  # Storage=volatile means to store journal data in memory and not on disk.
+  # It prevents flushing the data to the disk and thus save boot time
+  services.journald.extraConfig = ''
+    Storage=volatile
+    SystemMaxUse=100M
+
+    MaxLevelWall=emerg # Default = emerg
+    MaxLevelKMsg=notice # Default = notice
+    MaxLevelStore=warning # Default = debug
+
+    MaxLevelConsole=warning # Default = info
+    MaxLevelSyslog=notice # Default = debug
+   '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -152,6 +170,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
-
 }
 
