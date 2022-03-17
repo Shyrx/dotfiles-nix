@@ -58,16 +58,16 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-   programs.gnupg.agent = {
+  programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
-   virtualisation.virtualbox.host = {
-     enable = true;
-     enableExtensionPack = true;
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
    };
-   users.extraGroups.vboxusers.members = [ "shyrx" ];
+  users.extraGroups.vboxusers.members = [ "shyrx" ];
 
   # Enable tlp for power managment
   services.tlp.enable = true;
