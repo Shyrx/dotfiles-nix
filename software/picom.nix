@@ -2,8 +2,7 @@
 
 {
   services.picom = {
-    enable = true;
-    shadow = true;
-    shadowExclude = [ "window_type *= 'menu'" ];
+    enable = false;
+    shadow = false;
   };
 }
