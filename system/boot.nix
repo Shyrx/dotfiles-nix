@@ -6,12 +6,15 @@
     loader = {
       systemd-boot = {
         enable = true;
+        editor = false; # Recommended but not set by default for backward compatibility
         configurationLimit = 10; # Max number of generation in boot menu
         # consoleMode = "max";
       };
       efi.canTouchEfiVariables = true;
-      # generationsDir.enable = true
     };
+
+    tmpOnTmpfs = true;
+    cleanTmpDir = true;
 
     initrd.luks.devices.cryptroot = {
       device = "/dev/disk/by-label/nixos";
@@ -19,4 +22,6 @@
       allowDiscards = true;
     };
   };
+
+  virtualisation.docker.enableOnBoot = false;
 }
