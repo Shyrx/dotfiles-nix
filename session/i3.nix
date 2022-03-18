@@ -19,7 +19,7 @@ in {
 
       fonts = {
         names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-        size = 9.0;
+        size = 7.0;
       };
 
       focus = {
@@ -63,7 +63,7 @@ in {
 
           fonts = {
             names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-            size = 9.0;
+            size = 6.0;
           };
         }
       ];
