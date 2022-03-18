@@ -5,15 +5,6 @@
   services.xserver = {
     enable = true;
     layout = "fr";
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-        thunarPlugins = with pkgs.xfce; [ thunar-archive-plugin ];
-      };
-    };
     windowManager.i3 = {
       package = pkgs.i3-gaps;
       enable = true;
@@ -24,7 +15,7 @@
       ];
     };
     displayManager = {
-      defaultSession = "xfce+i3";
+      defaultSession = "none+i3";
       autoLogin.enable = true;
       autoLogin.user = "shyrx";
     };

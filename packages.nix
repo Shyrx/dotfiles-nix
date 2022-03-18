@@ -12,6 +12,7 @@
     bluez # bluetooth
     clang-tools
     cmake
+    desktop-file-utils
     discord
     docker
     evince # pdf
@@ -23,6 +24,7 @@
     gimp
     gnumake
     gnutar
+    gtk3
     htop
     i3status-rust # bar
     i3wsr # rename workspace
@@ -36,6 +38,7 @@
     qemu # Machine emulator and virtualizer
     ripgrep # Better grep, used for doom
     rofi # Another dmenu
+    shared-mime-info
     slack
     spotify # Music
     teams
@@ -47,6 +50,9 @@
     util-linux
     virtualenv
     vlc
+    xdg-user-dirs
+    xfce.thunar
+    xfce.thunar-archive-plugin
     zip
     zsh
   ];
