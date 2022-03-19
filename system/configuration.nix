@@ -47,6 +47,7 @@
     emacs
     firefox
     git
+    glibc
     networkmanagerapplet
     ntfs3g # Used by udiskie
     tlp # Power managment optimization

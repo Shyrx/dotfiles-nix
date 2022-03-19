@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  # TODO try networkd
-  networking.hostName = "nixos"; # Define your hostname.
+
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
 
