@@ -45,8 +45,12 @@
             format = "{label} Buds2";
           }
           {
-            block = "networkmanager";
-            primary_only = true;
+            block = "net";
+            format = "{ip}";
+          }
+          {
+            block = "speedtest";
+            format = "{ping}";
           }
           {
             block = "battery";

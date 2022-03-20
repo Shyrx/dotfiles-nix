@@ -1,9 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enable and
+  # Enable networkd
   systemd.network.enable = true;
-  useNetworkd = true;
 
   # systemd-resolved, a systemd DNS resolver daemon
   # Required to obtain DNS adresses from DHCP servers
@@ -11,11 +10,11 @@
     enable = true;
   };
 
-  # Need to specify that dhcpcd is disable
-  # to use the of internal to networkd
-  dhcpcd.enable = false;
-
   networking = {
+    useDHCP = false;
+    useNetworkd = true;
+    dhcpcd.enable = false;
+
     wireless.iwd = {
       enable = true;
 
@@ -35,6 +34,57 @@
     };
   };
 
+  networking.interfaces.wlo1.useDHCP = true;
+  networking.interfaces.eno1.useDHCP = true;
 
-  # FIXME Export iwd env var
+ # systemd.network.networks = {
+ #   "20-wired" = {
+ #     enable = true;
+ #     DHCP = "yes";
+ #     matchConfig = {
+ #       Name="eno*";
+ #     };
+ #     dhcpV4Config = {
+ #       RouteMetric = 10;
+ #     };
+ #     networkConfig = {
+ #       IPv6PrivacyExtensions = "kernel";
+ #     };
+ #   };
+ #   "20-wireless" = {
+ #     enable = true;
+ #     DHCP = "yes";
+ #     matchConfig = {
+ #       Name="wlan*";
+ #     };
+ #     dhcpV4Config = {
+ #       RouteMetric = 20;
+ #     };
+ #     networkConfig = {
+ #       IgnoreCarrierLoss = "3s";
+ #       IPv6PrivacyExtensions = "kernel";
+ #     };
+ #   };
+ #   "20-vbox" = {
+ #     enable = true;
+ #     DHCP = "no";
+ #     matchConfig = {
+ #       Name="vbox*";
+ #     };
+ #     networkConfig = {
+ #       IPv6PrivacyExtensions = "kernel";
+ #       Address= "192.168.56.1/24";
+ #     };
+ #     linkConfig = {
+ #       RequiredForOnline = "no";
+ #     };
+ #   };
+ # };
+
+  # Wait for any interface to become available, not for all
+  systemd.services."systemd-networkd-wait-online".serviceConfig.ExecStart = [
+    "" "${config.systemd.package}/lib/systemd/systemd-networkd-wait-online --any"
+  ];
+
+  # TODO Create command to connect to wifi
 }

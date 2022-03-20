@@ -6,7 +6,7 @@
       ./boot.nix
       ./hardware-configuration.nix # Include the results of the hardware scan.
       ./journald.nix
-      ./network.nix
+      ./network
       ./x.nix
     ];
 
@@ -48,13 +48,16 @@
     firefox
     git
     glibc
-    networkmanagerapplet
     ntfs3g # Used by udiskie
     tlp # Power managment optimization
     udiskie # Auto-mounter for external disk
     vim
     wget
     xorg.xbacklight
+
+    inxi
+    smartmontools
+    file
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -82,6 +85,9 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  services.upower.enable = true;
+
   # More docs
   documentation.dev.enable = true;
 
