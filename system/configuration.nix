@@ -7,6 +7,7 @@
       ./hardware-configuration.nix # Include the results of the hardware scan.
       ./journald.nix
       ./network
+      ./nvidia.nix
       ./x.nix
     ];
 
