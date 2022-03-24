@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./udisk.nix
+    ./git.nix
     ./picom.nix
+    ./udisk.nix
+    ./htop.nix
   ];
 }
