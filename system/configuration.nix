@@ -46,27 +46,19 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     emacs
+    file
     firefox
     git
     glibc
+    inxi
     ntfs3g # Used by udiskie
+    smartmontools
     tlp # Power managment optimization
     udiskie # Auto-mounter for external disk
     vim
     wget
     xorg.xbacklight
-
-    inxi
-    smartmontools
-    file
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   virtualisation.virtualbox.host = {
     enable = true;
