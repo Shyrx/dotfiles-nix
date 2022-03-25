@@ -111,8 +111,8 @@ in {
         "${mod}+f" = "exec firefox";
         "${mod}+x" = "exec emacsclient -c -a 'emacs'";
 
-        "${mod}+Shift+P" = "exec flameshot gui -p ~/Screen";
-        "Print" = "exec flameshot gui -p ~/Screen";
+        "${mod}+Shift+P" = "exec flameshot gui";
+        "Print" = "exec flameshot gui";
 
         "${mod}+Shift+e" = ''mode "${logoutMode}"'';
 	      "${mod}+Shift+r" = "restart";
