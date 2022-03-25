@@ -2,59 +2,61 @@
 
 {
 
-  nixpkgs.config.allowUnfree = true;
-  home.packages = with pkgs; [
-    alacritty # tty
-    arandr # window managment
-    betterlockscreen
-    binutils
-    blueman # graphical bluetooth manager
-    bluez # bluetooth
-    clang-tools
-    cmake
-    desktop-file-utils
-    discord
-    docker
-    evince # pdf
-    fd # faster find, used for doom
-    feh # background image
-    flameshot # screenshot
-    font-awesome
-    gcc
-    gimp
-    gnumake
-    gnutar
-    gtk3
-    htop
-    i3status-rust # bar
-    i3wsr # rename workspace
-    man-pages
-    man-pages-posix
-    numlockx
-    pandoc # Convert documents
-    picom # Compositing manager for X servers
-    playerctl # Utility for controlling media players
-    python3
-    qemu # Machine emulator and virtualizer
-    ripgrep # Better grep, used for doom
-    rofi # Another dmenu
-    shared-mime-info
-    slack
-    spotify # Music
-    teams
-    thunderbird
-    tree
-    unrar
-    unzip
-    usbutils
-    util-linux
-    virtualenv
-    vlc
-    xdg-user-dirs
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    zip
-    zsh
-  ];
+    nixpkgs.config.allowUnfree = true;
+    home.packages = with pkgs; [
+      # Software
+      discord
+      flameshot # screenshot
+      gimp
+      slack
+      spotify # Music
+      teams
+      thunderbird
+      vlc
+      xfce.thunar
+      xfce.thunar-archive-plugin
 
+      # Session
+      alacritty # tty
+      betterlockscreen
+      feh # background image
+      i3status-rust # bar
+      i3wsr # rename workspace
+      picom # Compositing manager for X servers
+      rofi # Another dmenu
+      zsh
+
+      # Tools
+      arandr # window managment
+      blueman # graphical bluetooth manager
+      clang
+      cmake
+      docker
+      evince # pdf
+      fd # faster find, used for doom
+      gcc
+      gnumake
+      gnutar
+      htop
+      pandoc # Convert documents
+      qemu # Machine emulator and virtualizer
+      ripgrep # Better grep, used for doom
+      tree
+      unzip
+      virtualenv
+      zip
+
+      # Utils
+      binutils
+      bluez # bluetooth
+      font-awesome
+      gtk3
+      man-pages
+      man-pages-posix
+      numlockx
+      playerctl # Utility for controlling media players
+      python3
+      unrar
+
+  ];
 }
