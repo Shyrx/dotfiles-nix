@@ -6,6 +6,7 @@
     home.packages = with pkgs; [
       # Software
       discord
+      firefox
       flameshot # screenshot
       gimp
       slack
@@ -29,7 +30,6 @@
       # Tools
       arandr # window managment
       blueman # graphical bluetooth manager
-      clang
       cmake
       docker
       evince # pdf
@@ -45,6 +45,9 @@
       unzip
       virtualenv
       zip
+      file
+      inxi
+      smartmontools
 
       # Utils
       binutils

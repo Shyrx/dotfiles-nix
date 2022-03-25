@@ -46,17 +46,13 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     emacs
-    file
     firefox
     git
     glibc
-    inxi
     ntfs3g # Used by udiskie
-    smartmontools
     tlp # Power managment optimization
     udiskie # Auto-mounter for external disk
     vim
-    wget
     xorg.xbacklight
   ];
 
