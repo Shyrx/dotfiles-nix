@@ -20,10 +20,11 @@
       # Session
       alacritty # tty
       betterlockscreen
+      # dunst # Notifications daemon
       feh # background image
       i3status-rust # bar
       i3wsr # rename workspace
-      picom # Compositing manager for X servers
+      # picom # Compositing manager for X servers
       rofi # Another dmenu
       zsh
 
@@ -31,6 +32,7 @@
       arandr # window managment
       blueman # graphical bluetooth manager
       cmake
+      curl
       docker
       evince # pdf
       fd # faster find, used for doom
