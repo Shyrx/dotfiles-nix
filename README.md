@@ -12,4 +12,5 @@ User configuration managed with Home-Manager
   - Create command to connect to wifi
   - Disable bluetooth by default and enable with a command
 - Change from i3 to bspwm
+- Config Zsh and Bat
 
