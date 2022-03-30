@@ -3,10 +3,11 @@
 {
   imports = [
     ./alacritty.nix
-    ./rofi
     ./bar.nix
     ./i3.nix
     ./locker.nix
+    ./picom.nix
+    ./rofi
     ./zsh.nix
   ];
 }

@@ -6,9 +6,10 @@
 
   # Imports configurations from other files/directories
   imports = [
+    ./packages.nix
     ./session
     ./software
-    ./packages.nix
+    ./tools.nix
   ];
 
   home = {

@@ -3,7 +3,7 @@
 {
 
   imports = [
-    #./networkd.nix
     ./network-manager.nix
+    #./networkd.nix
   ];
 }

@@ -8,6 +8,7 @@
       ./journald.nix
       ./network
       ./nvidia.nix
+      ./sound.nix
       ./x.nix
     ];
 
@@ -68,9 +69,6 @@
   services.openssh.enable = true;
   # Enable Udisks, a daemon for disks manipulation
   services.udisks2.enable = true;
-  # Enable sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
