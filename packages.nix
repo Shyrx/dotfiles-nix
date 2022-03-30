@@ -26,7 +26,7 @@
       i3wsr # rename workspace
       # picom # Compositing manager for X servers
       rofi # Another dmenu
-      zsh
+      zsh # Terminal
 
       # Tools
       arandr # window managment
