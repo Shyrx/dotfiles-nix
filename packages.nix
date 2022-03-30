@@ -33,6 +33,7 @@
       blueman # graphical bluetooth manager
       cmake
       curl
+      direnv
       docker
       evince # pdf
       fd # faster find, used for doom

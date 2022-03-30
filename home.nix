@@ -9,7 +9,7 @@
     ./packages.nix
     ./session
     ./software
-    ./tools.nix
+    ./tools
   ];
 
   home = {
