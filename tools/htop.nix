@@ -13,7 +13,7 @@
       # Don't want to see other users process
       shadow_other_users = 0;
       # Sort by PERCENT_CPU by default
-      sort_key = 46; # FIXME Doesn't work but don't know why
+      tree_sort_key = 46;
       sort_direction = 1;
       # Merge exe, comm and cmdline
       show_merged_command = 1;
