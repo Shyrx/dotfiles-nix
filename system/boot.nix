@@ -8,13 +8,12 @@
         enable = true;
         editor = false; # Recommended but not set by default for backward compatibility
         configurationLimit = 10; # Max number of generation in boot menu
-        # consoleMode = "max";
       };
       efi.canTouchEfiVariables = true;
     };
 
-    tmpOnTmpfs = true;
-    cleanTmpDir = true;
+    # Not enough RAM to use this, otherwise it would be great
+    # tmpOnTmpfs = true;
 
     initrd.luks.devices.cryptroot = {
       device = "/dev/disk/by-label/nixos";
@@ -22,6 +21,4 @@
       allowDiscards = true;
     };
   };
-
-  virtualisation.docker.enableOnBoot = false;
 }

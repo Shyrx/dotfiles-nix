@@ -19,8 +19,6 @@
       autoLogin.enable = true;
       autoLogin.user = "shyrx";
     };
-    # use Glamor for 2D acceleration, if possible
-    useGlamor = true;
     # enable touchpad support
     libinput.enable = true;
   };

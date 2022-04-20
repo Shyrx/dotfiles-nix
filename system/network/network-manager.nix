@@ -15,19 +15,14 @@
     networkmanager = {
       enable = true;
 
-      wifi.powersave = true;
+      # Unstable as of now
+      # Pages load weirdly when it's activated. At least on Firefox.
+      # wifi.powersave = true;
     };
 
     # We use networkmanager internal dhcp program
     dhcpcd.enable = false;
-
   };
 
   programs.nm-applet.enable = true;
-
-  # # Wait for any interface to become available, not for all
-  # systemd.services."NetworkManager-wait-online".serviceConfig.ExecStart = [
-  #   "" "${config.systemd.package}/lib/systemd/networkmanager-wait-online FIXME"
-  # ];
-
 }

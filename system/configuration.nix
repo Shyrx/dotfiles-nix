@@ -25,15 +25,15 @@
     # Detects files with identical content in store and replace them with hard links to a single copy
     autoOptimiseStore = true;
   };
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
   time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    # earlySetup = true;
     font = "Lat2-Terminus16";
-    keyMap = "fr";
+    keyMap = "fr"; # Keyboard layout to use during boot
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -65,6 +65,7 @@
 
   # Enable tlp for power managment
   services.tlp.enable = true;
+  services.upower.enable = true;
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   # Enable Udisks, a daemon for disks manipulation
@@ -72,11 +73,6 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  services.upower.enable = true;
-
-  # More docs
-  documentation.dev.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
