@@ -2,7 +2,7 @@
 
 let
   mod = "Mod4";
-  logoutMode = "[L]ogout, [l]ock, [p]ower off, [r]eboot";
+  logoutMode = "[l]ogout, [p]ower off, [r]eboot";
 in {
   xsession.scriptPath = "~/.config/.xsession";
 
@@ -106,6 +106,7 @@ in {
         "${mod}+Return" = "exec alacritty";
         "${mod}+Shift+a" = "kill";
 
+        "${mod}+a" = "exec --no-startup-id betterlockscreen -l --off 360, mode default";
 	      "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
         "${mod}+Tab" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${mod}+f" = "exec firefox";
@@ -180,8 +181,7 @@ in {
         in
           lib.mkOptionDefault {
             "${logoutMode}" = makeModeBindings {
-              "Shift+l" = "exec --no-startup-id i3-msg exit, mode default";
-              "l" = "exec --no-startup-id betterlockscreen -l --off 360, mode default";
+              "l" = "exec --no-startup-id i3-msg exit, mode default";
               "p" = "exec --no-startup-id systemctl poweroff, mode default";
               "r" = "exec --no-startup-id systemctl reboot, mode default";
             };
