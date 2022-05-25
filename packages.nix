@@ -5,12 +5,15 @@
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       # Software
+      calibre
       discord
       firefox
       flameshot # screenshot
       gimp
+      libreoffice
       slack
       spotify # Music
+      steam
       teams
       thunderbird
       vlc
@@ -37,20 +40,21 @@
       docker
       evince # pdf
       fd # faster find, used for doom
+      file
       gcc
+      gdb
       gnumake
       gnutar
       htop
+      inxi
       pandoc # Convert documents
       qemu # Machine emulator and virtualizer
       ripgrep # Better grep, used for doom
+      smartmontools
       tree
       unzip
       virtualenv
       zip
-      file
-      inxi
-      smartmontools
 
       # Utils
       binutils
@@ -61,6 +65,7 @@
       man-pages-posix
       numlockx
       playerctl # Utility for controlling media players
+      pre-commit
       python3
       unrar
 

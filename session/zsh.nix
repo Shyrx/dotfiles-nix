@@ -36,14 +36,14 @@ in
       nix-zsh-completions
     ];
 
-    sessionVariables = {
-      "ZSH_DISABLE_COMPFIX" = "true";
-      "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
-      "VISUAL" = "emacs";
-      "EDITOR" =  "emacs";
-      "_ZO_ECHO" = "1"; # 'When set to 1, z will print the matched directory before navigating to it.
-      "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
-    };
+    # sessionVariables = {
+    #   "ZSH_DISABLE_COMPFIX" = "true";
+    #   "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
+    #   "VISUAL" = "emacs";
+    #   "EDITOR" =  "emacs";
+    #   "_ZO_ECHO" = "1"; # 'When set to 1, z will print the matched directory before navigating to it.
+    #   "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
+    # };
   };
 
   programs.zsh.oh-my-zsh = {
@@ -52,6 +52,5 @@ in
       "colored-man-pages"
       "git"
     ];
-    theme = "gnzsh-nix";
   };
 }
