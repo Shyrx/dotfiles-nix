@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
-# FIXME
-
 {
   programs.direnv = {
     enable = true;
