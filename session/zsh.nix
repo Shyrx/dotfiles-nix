@@ -36,21 +36,27 @@ in
       nix-zsh-completions
     ];
 
-    # sessionVariables = {
-    #   "ZSH_DISABLE_COMPFIX" = "true";
-    #   "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
-    #   "VISUAL" = "emacs";
-    #   "EDITOR" =  "emacs";
-    #   "_ZO_ECHO" = "1"; # 'When set to 1, z will print the matched directory before navigating to it.
-    #   "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
-    # };
-  };
+    shellAliases = {
+      doom = "~/.emacs.d/bin/doom";
+    };
 
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [
-      "colored-man-pages"
-      "git"
-    ];
+    sessionVariables = {
+      "ZSH_DISABLE_COMPFIX" = "true";
+      "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
+      "VISUAL" = "emacs";
+      "EDITOR" =  "emacs";
+      "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "half-life";
+      plugins = [
+        "colored-man-pages"
+        "git"
+        "z"
+        "bgnotify"
+      ];
+    };
   };
 }
