@@ -21,19 +21,20 @@
       xfce.thunar-archive-plugin
 
       # Session
+      # dunst # Notifications daemon
+      # picom # Compositing manager for X servers
       alacritty # tty
       betterlockscreen
-      # dunst # Notifications daemon
+      blueman # graphical bluetooth manager
       feh # background image
       i3status-rust # bar
       i3wsr # rename workspace
-      # picom # Compositing manager for X servers
+      numlockx
       rofi # Another dmenu
       zsh # Terminal
 
-      # Tools
+      # Command line tools
       arandr # window managment
-      blueman # graphical bluetooth manager
       cmake
       curl
       direnv
@@ -53,6 +54,7 @@
       ripgrep # Better grep, used for doom
       smartmontools
       tree
+      unrar
       unzip
       virtualenv
       zip
@@ -60,15 +62,19 @@
       # Utils
       binutils
       bluez # bluetooth
+      cargo
+      editorconfig-core-c
       font-awesome
+      glslang # For C lsp
       gtk3
       man-pages
       man-pages-posix
-      numlockx
+      nixfmt
+      pipenv
       playerctl # Utility for controlling media players
       pre-commit
       python3
-      unrar
-
+      rustc
+      shellcheck # For better shell coding experience
   ];
 }
