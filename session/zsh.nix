@@ -38,9 +38,9 @@ in
 
     shellAliases = {
       doom = "~/.emacs.d/bin/doom";
-      l = "exa -l --git --grid --across";
-      la = "exa -la --git --grid --across";
-      ld = "exa -lD --git --grid --across";
+      l = "exa -l --git --grid";
+      la = "exa -la --git --grid";
+      ld = "exa -lD --git --grid";
     };
 
     sessionVariables = {
