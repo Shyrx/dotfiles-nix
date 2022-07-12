@@ -6,6 +6,7 @@
       ./bluetooth.nix
       ./boot.nix
       ./hardware-configuration.nix # Include the results of the hardware scan.
+      ./hardware-maintenance.nix
       ./journald.nix
       ./network
       ./nvidia.nix
