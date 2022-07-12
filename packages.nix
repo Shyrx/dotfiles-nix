@@ -5,7 +5,6 @@
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       # Software
-      calibre
       discord
       firefox
       flameshot # screenshot
@@ -25,7 +24,6 @@
       # picom # Compositing manager for X servers
       alacritty # tty
       betterlockscreen
-      blueman # graphical bluetooth manager
       feh # background image
       i3status-rust # bar
       i3wsr # rename workspace
@@ -48,11 +46,9 @@
       gnumake
       gnutar
       htop
-      inxi
       pandoc # Convert documents
       qemu # Machine emulator and virtualizer
       ripgrep # Better grep, used for doom
-      smartmontools
       tree
       unrar
       unzip
@@ -60,9 +56,11 @@
       zip
 
       # Utils
+      bear
       binutils
-      bluez # bluetooth
       cargo
+      ccls
+      clang-tools
       editorconfig-core-c
       font-awesome
       glslang # For C lsp
