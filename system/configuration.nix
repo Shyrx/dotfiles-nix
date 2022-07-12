@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./bluetooth.nix
       ./boot.nix
       ./hardware-configuration.nix # Include the results of the hardware scan.
       ./journald.nix
@@ -76,9 +77,6 @@
   services.openssh.enable = true;
   # Enable Udisks, a daemon for disks manipulation
   services.udisks2.enable = true;
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   # Let home manager manage programs configuration for the shell
   programs.dconf.enable = true;
