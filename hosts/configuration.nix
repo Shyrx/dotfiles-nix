@@ -1,21 +1,38 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 let wayland = config.modules.desktop.sessions.wayland;
 in {
   nix = {
     package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
       dates = "monthly";
     };
-    # settings.auto-optimise-store = true;
+    settings = {
+      experimental-features = "nix-command flakes";
+      auto-optimise-store = true;
+      warn-dirty = false;
+      substituters = [
+        "https://nix-community.cachix.org/"
+      ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    nixPath = [
+      "nixpkgs=/etc/nix/channels/nixpkgs"
+      "home-manager=/etc/nix/channels/home-manager"
+    ];
+  };
+
+  environment.etc = {
+    "nix/channels/nixpkgs".source = inputs.nixpkgs.outPath;
+    "nix/channels/home-manager".source = inputs.home-manager.outPath;
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -60,6 +77,7 @@ in {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
   # hardware.pulseaudio.enable = true;
   hardware.bluetooth = {
@@ -70,7 +88,7 @@ in {
   services.blueman.enable = true;
 
   # Define a user account.
-  users.users.tristan = {
+  users.users.shyrx = {
     isNormalUser = true;
     initialPassword = "1234"; # Change on first login.
     extraGroups =
@@ -101,7 +119,7 @@ in {
     # enableExtensionPack = true; # allows port forwarding for usb2 and usb3
   };
 
-  users.extraGroups.vboxusers.members = [ "tristan" ];
+  users.extraGroups.vboxusers.members = [ "shyrx" ];
 
   documentation.dev.enable = true;
 
@@ -122,5 +140,5 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "22.05"; # Did you read the comment?
 }

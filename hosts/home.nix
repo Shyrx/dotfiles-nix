@@ -1,12 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  home-manager.users.tristan = {
+  home-manager.users.shyrx = {
     home = {
       # Home Manager needs a bit of information about you and the
       # paths it should manage.
-      username = "tristan";
-      homeDirectory = "/home/tristan";
+      username = "shyrx";
+      homeDirectory = "/home/shyrx";
 
       # This value determines the Home Manager release that your
       # configuration is compatible with. This helps avoid breakage
@@ -16,7 +16,7 @@
       # You can update Home Manager without changing this value. See
       # the Home Manager release notes for a list of state version
       # changes in each release.
-      stateVersion = "21.11";
+      stateVersion = "22.05";
 
       sessionVariables = {
         EDITOR = "vim"; # God forgive me

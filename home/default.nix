@@ -28,7 +28,7 @@
       # PROTON_USE_WINED3D = 1;
     };
 
-    stateVersion = "21.11";
+    stateVersion = "22.05";
   };
 
   services = {

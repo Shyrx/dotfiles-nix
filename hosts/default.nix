@@ -6,16 +6,16 @@ inputs@{ self, home-manager, nixpkgs, system, ... }:
       inherit system;
       modules = [
         ./hosts/configuration.nix
-        ./hosts/nixos-zenbook/hardware-configuration.nix
+        ./hosts/nixos/hardware-configuration.nix
 
-        { networking.hostName = "nixos-zenbook"; }
+        { networking.hostName = "nixos"; }
 
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.tristan = import ./hosts/home.nix;
+            users.shyrx = import ./hosts/home.nix;
           };
         }
       ];
