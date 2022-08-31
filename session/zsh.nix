@@ -41,6 +41,7 @@ in
       l = "exa -l --git --grid";
       la = "exa -la --git --grid";
       ld = "exa -lD --git --grid";
+      nix-search = "nix-env -qaP";
     };
 
     sessionVariables = {

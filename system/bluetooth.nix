@@ -14,7 +14,6 @@
   };
 
   hardware.pulseaudio.extraModules = [
-    pkgs.pulseaudio-modules-bt
   ];
 
   services.blueman.enable = true;
