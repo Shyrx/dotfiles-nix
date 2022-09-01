@@ -10,25 +10,22 @@
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }:
-    let
-    in {
-      nixosModules = {
-        modules = import ./modules;
-
-        home.home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.shyrx = import ./home;
-        };
-      };
-
+    {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        nixos-lp-omen = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./hosts/nixos
+            ./hosts/nixos-lp-omen
 
-            home-manager.nixosModule
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.shyrx = import ./home;
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
           ];
         };
       };
