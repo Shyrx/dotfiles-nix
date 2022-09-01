@@ -6,5 +6,6 @@
     ./git.nix
     ./htop.nix
     ./udisk.nix
+    ./gnupg.nix
   ];
 }

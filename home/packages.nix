@@ -74,5 +74,7 @@
       python3
       rustc
       shellcheck # For better shell coding experience
+      gnupg
+      pinentry-curses
   ];
 }
