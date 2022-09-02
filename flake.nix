@@ -3,30 +3,54 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-22.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-22.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }:
-    {
+  outputs = inputs @ { self, ... }:
+    let
+
+      inherit (builtins) attrValues;
+      system = "x86_64-linux";
+
+    in rec {
+
+      overlays = {
+        emacs = inputs.emacs-overlay.overlay;
+      };
+
+      nixosModules = {
+        modules = import ./modules;
+
+        home.home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.shyrx = import ./home;
+          extraSpecialArgs = { inherit inputs; };
+        };
+      };
+
       nixosConfigurations = {
-        nixos-lp-omen = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+        nixos-lp-omen = inputs.nixpkgs.lib.nixosSystem {
+          inherit system;
+
           modules = [
             ./hosts/nixos-lp-omen
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.shyrx = import ./home;
+            inputs.home-manager.nixosModule
 
-              # Optionally, use home-manager.extraSpecialArgs to pass
-              # arguments to home.nix
-            }
-          ];
+            { nixpkgs.overlays = attrValues overlays; }
+          ] ++ attrValues nixosModules;
         };
       };
     };
