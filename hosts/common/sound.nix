@@ -2,6 +2,10 @@
 
 {
 
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+  ];
+
   # Enable sound
   sound.enable = true;
   # Enable media keys, do not use with desktopManager
