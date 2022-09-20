@@ -9,7 +9,7 @@ in {
   xsession.windowManager.i3 = {
     package = pkgs.i3-gaps;
     enable = true;
-    config  = {
+    config = {
 
       modifier = mod;
       terminal = "alacritty";
@@ -52,21 +52,18 @@ in {
         };
       };
 
-      bars =
-        let
-          barConfigPath =
-            config.xdg.configFile."i3status-rust/config-top.toml".target;
-          in [
-        {
-          statusCommand = "i3status-rs ${barConfigPath}";
-          position = "top";
+      bars = let
+        barConfigPath =
+          config.xdg.configFile."i3status-rust/config-top.toml".target;
+      in [{
+        statusCommand = "i3status-rs ${barConfigPath}";
+        position = "top";
 
-          fonts = {
-            names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-            size = 6.0;
-          };
-        }
-      ];
+        fonts = {
+          names = [ "DejaVuSansMono" "FontAwesome5Free" ];
+          size = 6.0;
+        };
+      }];
 
       startup = [
         {
@@ -75,7 +72,8 @@ in {
           notification = true;
         }
         {
-          command = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/.config/lockscreen.png";
+          command =
+            "${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/.config/lockscreen.png";
           always = true;
           notification = true;
         }
@@ -106,8 +104,9 @@ in {
         "${mod}+Return" = "exec alacritty";
         "${mod}+Shift+a" = "kill";
 
-        "${mod}+a" = "exec --no-startup-id betterlockscreen -l --off 360, mode default";
-	      "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
+        "${mod}+a" =
+          "exec --no-startup-id betterlockscreen -l --off 360, mode default";
+        "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
         "${mod}+Tab" = "exec ${pkgs.rofi}/bin/rofi -show window";
         "${mod}+f" = "exec firefox";
         "${mod}+x" = "exec emacsclient -c -a 'emacs'";
@@ -115,12 +114,17 @@ in {
         "${mod}+Shift+P" = "exec flameshot gui";
         "Print" = "exec flameshot gui";
 
-        "${mod}+Shift+e" = ''mode "${logoutMode}"'';
-	      "${mod}+Shift+r" = "restart";
+        "${mod}+space" = "fullscreen";
 
-        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
-        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
-        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
+        "${mod}+Shift+e" = ''mode "${logoutMode}"'';
+        "${mod}+Shift+r" = "restart";
+
+        "XF86AudioMute" =
+          "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioLowerVolume" =
+          "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
+        "XF86AudioRaiseVolume" =
+          "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
 
         "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
         "XF86AudioNext" = "exec --no-startup-id playerctl next";
@@ -142,25 +146,25 @@ in {
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move right";
 
-	      "${mod}+1" = "workspace number 1";
-	      "${mod}+2" = "workspace number 2";
-	      "${mod}+3" = "workspace number 3";
+        "${mod}+1" = "workspace number 1";
+        "${mod}+2" = "workspace number 2";
+        "${mod}+3" = "workspace number 3";
         "${mod}+4" = "workspace number 4";
-	      "${mod}+5" = "workspace number 5";
-	      "${mod}+6" = "workspace number 6";
-	      "${mod}+7" = "workspace number 7";
-	      "${mod}+8" = "workspace number 8";
-	      "${mod}+9" = "workspace number 9";
+        "${mod}+5" = "workspace number 5";
+        "${mod}+6" = "workspace number 6";
+        "${mod}+7" = "workspace number 7";
+        "${mod}+8" = "workspace number 8";
+        "${mod}+9" = "workspace number 9";
 
- 	    "${mod}+Shift+1" = "move container to workspace number 1";
-	      "${mod}+Shift+2" = "move container to workspace number 2";
-	      "${mod}+Shift+3" = "move container to workspace number 3";
-	      "${mod}+Shift+4" = "move container to workspace number 4";
- 	    "${mod}+Shift+5" = "move container to workspace number 5";
-	      "${mod}+Shift+6" = "move container to workspace number 6";
-	      "${mod}+Shift+7" = "move container to workspace number 7";
-	      "${mod}+Shift+8" = "move container to workspace number 8";
-	      "${mod}+Shift+9" = "move container to workspace number 9";
+        "${mod}+Shift+1" = "move container to workspace number 1";
+        "${mod}+Shift+2" = "move container to workspace number 2";
+        "${mod}+Shift+3" = "move container to workspace number 3";
+        "${mod}+Shift+4" = "move container to workspace number 4";
+        "${mod}+Shift+5" = "move container to workspace number 5";
+        "${mod}+Shift+6" = "move container to workspace number 6";
+        "${mod}+Shift+7" = "move container to workspace number 7";
+        "${mod}+Shift+8" = "move container to workspace number 8";
+        "${mod}+Shift+9" = "move container to workspace number 9";
       };
 
       # FIXME not working correctly becaause i3wsr rename workspace
@@ -169,34 +173,33 @@ in {
         # FIXME discord and slack are assigned on two different desktop, both numbered 5
         #"5" = [{ class = "discord"; }];
         #"6" = [{ class = "Slack"; }];
-        # TODO add Spotify to 6
+        # TODO add Spotify to 7
       };
 
-      modes =
-        let
-          makeModeBindings = attrs: attrs // {
+      modes = let
+        makeModeBindings = attrs:
+          attrs // {
             "Escape" = "mode default";
             "Return" = "mode default";
           };
-        in
-          lib.mkOptionDefault {
-            "${logoutMode}" = makeModeBindings {
-              "l" = "exec --no-startup-id i3-msg exit, mode default";
-              "p" = "exec --no-startup-id systemctl poweroff, mode default";
-              "r" = "exec --no-startup-id systemctl reboot, mode default";
-            };
-          };
+      in lib.mkOptionDefault {
+        "${logoutMode}" = makeModeBindings {
+          "l" = "exec --no-startup-id i3-msg exit, mode default";
+          "p" = "exec --no-startup-id systemctl poweroff, mode default";
+          "r" = "exec --no-startup-id systemctl reboot, mode default";
+        };
+      };
     };
-      extraConfig = ''
-        set $ws1 1
-        set $ws2 2
-        set $ws3 3
-        set $ws4 4
-        set $ws5 5
-        set $ws6 6
-        set $ws7 7
-        set $ws8 8
-        set $ws9 9
-      '';
+    extraConfig = ''
+      set $ws1 1
+      set $ws2 2
+      set $ws3 3
+      set $ws4 4
+      set $ws5 5
+      set $ws6 6
+      set $ws7 7
+      set $ws8 8
+      set $ws9 9
+    '';
   };
 }
