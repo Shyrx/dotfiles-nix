@@ -73,9 +73,10 @@
       pipenv
       playerctl # Utility for controlling media players
       pre-commit
-      python3
+      python310
       rustc
       shellcheck # For better shell coding experience
+      python-language-server
 
       gnupg
       pinentry-curses
