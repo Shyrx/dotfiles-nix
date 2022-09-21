@@ -22,5 +22,9 @@
         syntax-theme = "Dracula";
       };
     };
+
+    ignores = [ "*~" "*.o" ".ccls-cache" ".envrc" ];
+
+    extraConfig = { init = { defaultBranch = "main"; }; };
   };
 }
