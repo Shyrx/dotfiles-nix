@@ -7,7 +7,7 @@
     enableZshIntegration = true;
     enableFishIntegration = true;
     enableSshSupport = true;
-    pinentryFlavor = "curses";
+    pinentryFlavor = "gtk2";
     extraConfig = ''
       allow-emacs-pinentry
     '';
