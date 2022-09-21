@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = inputs @ { self, ... }:
+  outputs = inputs@{ self, ... }:
     let
 
       inherit (builtins) attrValues;
@@ -25,9 +25,7 @@
 
     in rec {
 
-      overlays = {
-        emacs = inputs.emacs-overlay.overlay;
-      };
+      overlays = { emacs = inputs.emacs-overlay.overlay; };
 
       nixosModules = {
         modules = import ./modules;
@@ -45,12 +43,14 @@
           inherit system;
 
           modules = [
-            ./hosts/nixos-lp-omen
-
             inputs.home-manager.nixosModule
+
+            ./hosts/nixos-lp-omen
 
             { nixpkgs.overlays = attrValues overlays; }
           ] ++ attrValues nixosModules;
+
+          specialArgs = { inherit inputs; };
         };
       };
     };
