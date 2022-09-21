@@ -36,20 +36,41 @@ in {
 
       colors = {
         focused = {
-          background = "#8f3445";
-          border = "#333333";
-          text = "#ffffff";
-          indicator = "#484e50";
-          childBorder = "#8f3445";
+          border = "#6272A4";
+          background = "#6272A4";
+          text = "#F8F8F2";
+          indicator = "#6272A4";
+          childBorder = "#6272A4";
         };
-
         focusedInactive = {
-          background = "#6f1425";
-          border = "#333333";
-          text = "#ffffff";
-          indicator = "#484e50";
-          childBorder = "#6f1425";
+          border = "#44475A";
+          background = "#44475A";
+          text = "#F8F8F2";
+          indicator = "#44475A";
+          childBorder = "#44475A";
         };
+        unfocused = {
+          border = "#282A36";
+          background = "#282A36";
+          text = "#BFBFBF";
+          indicator = "#282A36";
+          childBorder = "#282A36";
+        };
+        urgent = {
+          border = "#44475A";
+          background = "#FF5555";
+          text = "#F8F8F2";
+          indicator = "#FF5555";
+          childBorder = "#FF5555";
+        };
+        placeholder = {
+          border = "#282A36";
+          background = "#282A36";
+          text = "#F8F8F2";
+          indicator = "#282A36";
+          childBorder = "#282A36";
+        };
+        background = "#F8F8F2";
       };
 
       bars = let
