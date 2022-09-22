@@ -17,7 +17,6 @@
         showDesktopNotification = false;
         disabledTrayIcon = true;
 
-        autoCloseIdDaemon = false;
         startupLaunch = true;
       };
     };
