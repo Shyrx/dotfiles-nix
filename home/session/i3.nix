@@ -19,7 +19,7 @@ in {
 
       fonts = {
         names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-        size = 7.0;
+        size = 11.0;
       };
 
       focus = {
@@ -29,7 +29,7 @@ in {
       };
 
       gaps = {
-        inner = 5;
+        inner = 8;
         outer = 0;
         smartGaps = true;
       };
@@ -82,7 +82,7 @@ in {
 
         fonts = {
           names = [ "DejaVuSansMono" "FontAwesome5Free" ];
-          size = 6.0;
+          size = 11.0;
         };
       }];
 
