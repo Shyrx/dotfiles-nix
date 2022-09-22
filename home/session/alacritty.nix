@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      font.size = 9;
+      font.size = 10;
       window.opacity = 0.7;
       mouse.hide = true;
       window.dynamic_title = true;
