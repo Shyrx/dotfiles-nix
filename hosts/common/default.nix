@@ -58,12 +58,6 @@
     xorg.xbacklight
   ];
 
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-   };
-  users.extraGroups.vboxusers.members = [ "shyrx" ];
-
   environment.pathsToLink = [ "/share/zsh" ];
 
   virtualisation.docker.enable = true;

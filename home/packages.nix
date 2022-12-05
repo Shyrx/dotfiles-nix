@@ -9,12 +9,10 @@
     firefox
     flameshot # screenshot
     gimp
-    libreoffice
     morgen
     slack
     spotify # Music
-    steam
-    teams
+    slrn
     thunderbird
     vlc
     xfce.thunar
@@ -47,9 +45,7 @@
     gnumake
     gnutar
     htop
-    pandoc # Convert documents
     poetry # Venv in better
-    qemu # Machine emulator and virtualizer
     ripgrep # Better grep, used for doom
     tree
     unrar
