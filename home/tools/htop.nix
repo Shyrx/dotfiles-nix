@@ -43,11 +43,9 @@
         STATE
         PRIORITY
         NICE
-        M_SIZE # M_VIRT
         M_RESIDENT
         M_SHARE
         PERCENT_CPU
-        PERCENT_MEM
         TIME
         #ELAPSED
         COMM
