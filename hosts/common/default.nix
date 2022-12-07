@@ -43,8 +43,10 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/Paris";
-  time.hardwareClockInLocalTime = true;
+  time = {
+    timeZone = "Europe/Paris";
+    hardwareClockInLocalTime = true;
+  };
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
@@ -52,10 +54,9 @@
     keyMap = "fr"; # Keyboard layout to use during boot
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shyrx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -78,14 +79,12 @@
 
   virtualisation.docker.enable = true;
 
-  # Enable tlp for power managment
-  services.tlp.enable = true;
-  services.upower.enable = true;
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  # Enable Udisks, a daemon for disks manipulation
-  services.udisks2.enable = true;
-
+  services = {
+    tlp.enable = true;
+    openssh.enable = true;
+    udisks2.enable = true;
+  };
+  
   # Let home manager manage programs configuration for the shell
   programs.dconf.enable = true;
 
