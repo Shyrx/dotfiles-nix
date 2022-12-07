@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     # Software
     discord
+    emacs
     firefox
     flameshot # screenshot
     gimp
@@ -27,6 +28,7 @@
     i3status-rust # bar
     i3wsr # rename workspace
     numlockx
+    xorg.xbacklight
     rofi # Another dmenu
     zsh # Terminal
 
@@ -56,6 +58,7 @@
     # Utils
     font-awesome
     gtk3
+    glibc
     playerctl # Utility for controlling media players
     pre-commit
     maim # For org
