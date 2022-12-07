@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   imports =
@@ -13,7 +13,8 @@
     ];
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixUnstable;
+    readOnlyStore = true;
     extraOptions = ''
         experimental-features = nix-command flakes
       '';
@@ -22,8 +23,23 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    # Detects files with identical content in store and replace them with hard links to a single copy
-    autoOptimiseStore = true;
+    settings = {
+      trusted-users = [ "root" "@wheel" ];
+      log-lines = 20;
+      auto-optimise-store = true;
+      warn-dirty = false;
+    };
+
+
+    # Add each flake input as a registry
+    # To make nix3 commands consistent with the flake
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+
+    # Map registries to channels
+    # Very useful when using legacy commands
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
+      config.nix.registry;
+    
   };
 
   # Set your time zone.
