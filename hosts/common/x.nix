@@ -8,11 +8,6 @@
     windowManager.i3 = {
       package = pkgs.i3-gaps;
       enable = true;
-      # extraPackages = with pkgs; [
-      #   dmenu
-      #   i3status
-      #   i3lock
-      # ];
     };
     displayManager = {
       defaultSession = "none+i3";
