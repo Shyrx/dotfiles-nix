@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./home.nix
       ./bluetooth.nix
       ./boot.nix
       ./journald.nix
