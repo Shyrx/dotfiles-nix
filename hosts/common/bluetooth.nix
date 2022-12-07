@@ -3,7 +3,6 @@
 {
   hardware.bluetooth = {
     enable = true;
-
     powerOnBoot = false;
 
     settings = { # System-wide config (/etc/bluetooth/main.conf)
@@ -13,11 +12,7 @@
     };
   };
 
-  hardware.pulseaudio.extraModules = [
-  ];
-
   services.blueman.enable = true;
-
   environment.systemPackages = with pkgs; [
     blueman # Graphical bluetooth manager
     bluez # Bluetooth support for Linux
