@@ -5,7 +5,6 @@
     [
       ./bluetooth.nix
       ./boot.nix
-      ./hardware-maintenance.nix
       ./journald.nix
       ./network
       ./sound.nix
@@ -64,15 +63,13 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    emacs
     firefox
     git
-    glibc
     ntfs3g # Used by udiskie
     tlp # Power managment optimization
     udiskie # Auto-mounter for external disk
     vim
-    xorg.xbacklight
+    inxi
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
