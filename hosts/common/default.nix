@@ -8,7 +8,7 @@
       ./boot.nix
       ./journald.nix
       ./network
-      ./sound.nix
+      ./media.nix
       ./x.nix
     ];
 

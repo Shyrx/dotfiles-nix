@@ -118,6 +118,11 @@ in {
           always = false;
           notification = true;
         }
+        {
+          command = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 40%";
+          always = false;
+          notification = true;
+        }
       ];
 
       keybindings = lib.mkOptionDefault {
@@ -141,11 +146,11 @@ in {
         "${mod}+Shift+r" = "restart";
 
         "XF86AudioMute" =
-          "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         "XF86AudioLowerVolume" =
-          "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4%";
+          "exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 4%-";
         "XF86AudioRaiseVolume" =
-          "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4%";
+          "exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 4%+";
 
         "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
         "XF86AudioNext" = "exec --no-startup-id playerctl next";
