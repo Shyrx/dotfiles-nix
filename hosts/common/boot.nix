@@ -10,8 +10,11 @@
         configurationLimit = 10; # Max number of generation in boot menu
       };
       efi.canTouchEfiVariables = true;
+      timeout = 5;
     };
 
+    tmpOnTmpfs = true;
+    cleanTmpDir = false;
     # Not enough RAM to use this, otherwise it would be great
     # tmpOnTmpfs = true;
 
