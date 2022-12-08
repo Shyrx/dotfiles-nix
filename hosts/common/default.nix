@@ -10,7 +10,6 @@
       ./media.nix
       ./network
       ./nix.nix
-      ./nvidia.nix
       ./x.nix
     ];
 

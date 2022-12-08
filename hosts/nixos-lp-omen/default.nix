@@ -1,11 +1,18 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-{
+let
+  nixosOptions.modules = {
+    nvidia.enable = true;
+  };
+    
+in {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ../common
   ];
 
+  modules = nixosOptions.modules;
+  
   networking.hostName = "nixos-lp-omen";
 
   users.users.shyrx = {
