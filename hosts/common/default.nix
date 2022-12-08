@@ -3,12 +3,13 @@
 {
   imports =
     [
-      ./home.nix
       ./bluetooth.nix
       ./boot.nix
+      ./home.nix
       ./journald.nix
-      ./network
       ./media.nix
+      ./network
+      ./nvidia.nix
       ./x.nix
     ];
 
