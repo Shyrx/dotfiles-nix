@@ -9,28 +9,10 @@
       ./journald.nix
       ./media.nix
       ./network
-      ./nvidia.nix
       ./nix.nix
+      ./nvidia.nix
       ./x.nix
     ];
-
-  # Set your time zone.
-  time = {
-    timeZone = "Europe/Paris";
-    hardwareClockInLocalTime = true;
-  };
-
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "fr"; # Keyboard layout to use during boot
-  };
-
-  users.users.shyrx = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
-    shell = pkgs.zsh;
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -44,8 +26,6 @@
     vim
     inxi
   ];
-
-  environment.pathsToLink = [ "/share/zsh" ];
 
   virtualisation.docker.enable = true;
 
