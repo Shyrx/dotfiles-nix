@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./nvidia.nix ./x.nix ];
+  imports = [
+    ./docker.nix
+    ./nvidia.nix
+    ./x.nix
+  ];
 }
