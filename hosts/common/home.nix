@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  
+  # Let home manager manage programs configuration for the shell
+  programs.dconf.enable = true;
+
   home-manager.users.shyrx = {
     home = rec {
       # Home Manager needs a bit of information about you and the

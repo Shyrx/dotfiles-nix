@@ -83,9 +83,6 @@
     openssh.enable = true;
     udisks2.enable = true;
   };
-  
-  # Let home manager manage programs configuration for the shell
-  programs.dconf.enable = true;
 
     # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
