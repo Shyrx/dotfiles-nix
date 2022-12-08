@@ -12,7 +12,8 @@ in
     virtualisation.docker = {
       enable = true;
       enableNvidia = nvidia.enable;
-
+      enableOnBoot = false;
+      
       autoPrune = {
         enable = true;
         dates = "weekly";
