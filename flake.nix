@@ -28,7 +28,8 @@
       overlays = { emacs = inputs.emacs-overlay.overlay; };
 
       nixosModules = {
-
+        modules = import ./modules;
+        
         home.home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
@@ -40,7 +41,6 @@
       nixosConfigurations = {
         nixos-lp-omen = inputs.nixpkgs.lib.nixosSystem {
           inherit system;
-
           modules = [
             inputs.home-manager.nixosModule
 
