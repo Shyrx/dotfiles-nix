@@ -36,7 +36,6 @@
     cmake
     curl
     direnv
-    docker
     evince # pdf
     exa # better ls
     fd # faster find, used for doom
