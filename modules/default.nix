@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./nvidia.nix ];
+  imports = [ ./nvidia.nix ./x.nix ];
 }
