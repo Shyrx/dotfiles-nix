@@ -3,6 +3,7 @@
 let
   nixosOptions.modules = {
     nvidia.enable = true;
+    x.enable = true;
   };
     
 in {

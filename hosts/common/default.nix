@@ -10,7 +10,6 @@
       ./media.nix
       ./network
       ./nix.nix
-      ./x.nix
     ];
 
   # List packages installed in system profile. To search, run:
