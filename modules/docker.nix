@@ -15,7 +15,7 @@ in
       enableOnBoot = false;
       
       autoPrune = {
-        enable = true;
+        enable = false;
         dates = "weekly";
         flags = [
           "--all"
