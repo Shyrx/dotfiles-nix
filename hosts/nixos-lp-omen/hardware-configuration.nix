@@ -4,27 +4,32 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+  imports = [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.initrd.luks.devices.cryptroot = {
+    device = "/dev/disk/by-label/nixos";
+    preLVM = true;
+    allowDiscards = true;
+  };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/81de7378-6950-4fee-abce-2ac429416337";
+  fileSystems."/" = {
+      device = "/dev/disk/by-uuid/81de7378-6950-4fee-abce-2ac429416337";
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8C3D-31E4";
+  fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/8C3D-31E4";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/293ea1bc-9df0-44aa-9d51-625659c4bd17"; }
+  swapDevices = [
+      { device = "/dev/disk/by-uuid/293ea1bc-9df0-44aa-9d51-625659c4bd17"; }
     ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
