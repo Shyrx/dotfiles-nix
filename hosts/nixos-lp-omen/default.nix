@@ -2,9 +2,11 @@
 
 let
   nixosOptions.modules = {
-    bluetooth.enable = true;
+    services = {
+      docker.enable = true;
+      bluetooth.enable = true;
+    };
     nvidia.enable = true;
-    docker.enable = true;
     network = {
       network-manager.enable = true;
     };
