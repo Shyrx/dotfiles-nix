@@ -5,7 +5,7 @@
     ./media
     ./network
     ./desktop
-    ./nvidia.nix
     ./services
+    ./hardware
   ];
 }

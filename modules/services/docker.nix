@@ -2,7 +2,7 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  nvidia = config.modules.nvidia;
+  nvidia = config.modules.hardware.nvidia;
   cfg = config.modules.services.docker;
 in
 {
