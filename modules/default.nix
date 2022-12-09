@@ -3,6 +3,7 @@
 {
   imports = [
     ./media
+    ./network
     ./desktop
     ./bluetooth.nix
     ./docker.nix
