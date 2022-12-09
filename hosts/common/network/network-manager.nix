@@ -2,6 +2,11 @@
 
 {
 
+  systemd.network.wait-online = {
+    timeout = 0;
+    anyInterface = true;
+  };
+  
   networking = {
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
     # Per-interface useDHCP will be mandatory in the future, so this generated config
