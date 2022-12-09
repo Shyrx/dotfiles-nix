@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./media
     ./bluetooth.nix
     ./docker.nix
     ./nvidia.nix
