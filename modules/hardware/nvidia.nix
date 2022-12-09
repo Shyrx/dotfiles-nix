@@ -2,10 +2,10 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.modules.nvidia;
+  cfg = config.modules.hardware.nvidia;
 in
 {
-  options.modules.nvidia.enable = mkEnableOption "nvidia";
+  options.modules.hardware.nvidia.enable = mkEnableOption "nvidia";
 
   config = mkIf cfg.enable {
     services.xserver = {
