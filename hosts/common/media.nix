@@ -23,5 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     pavucontrol
+    pipewire
+    wireplumber
   ];
 }
