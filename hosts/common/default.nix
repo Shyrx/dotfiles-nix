@@ -27,7 +27,6 @@
   services = {
     tlp.enable = true;
     openssh.enable = true;
-    udisks2.enable = true;
   };
 
     # This value determines the NixOS release from which the default
