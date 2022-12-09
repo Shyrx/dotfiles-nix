@@ -5,7 +5,6 @@
     [
       ./boot.nix
       ./home.nix
-      ./journald.nix
       ./nix.nix
     ];
 
