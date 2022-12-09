@@ -2,10 +2,10 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.modules.x;
+  cfg = config.modules.desktop.x;
 in
 {
-  options.modules.x.enable = mkEnableOption "x";
+  options.modules.desktop.x.enable = mkEnableOption "x";
 
   config = mkIf cfg.enable {
     # Enable the X11 windowing system.
