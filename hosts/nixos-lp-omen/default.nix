@@ -5,6 +5,9 @@ let
     bluetooth.enable = true;
     nvidia.enable = true;
     docker.enable = true;
+    network = {
+      network-manager.enable = true;
+    };
     desktop = {
       x.enable = true;
     };

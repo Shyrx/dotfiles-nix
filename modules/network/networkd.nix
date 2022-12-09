@@ -11,7 +11,7 @@
   };
 
   networking = {
-    useDHCP = false;
+    useDHCP = true;
     useNetworkd = true;
     dhcpcd.enable = false;
 
@@ -33,9 +33,6 @@
       };
     };
   };
-
-  networking.interfaces.wlo1.useDHCP = true;
-  networking.interfaces.eno1.useDHCP = true;
 
  # systemd.network.networks = {
  #   "20-wired" = {
@@ -81,10 +78,9 @@
  #   };
  # };
 
-  # Wait for any interface to become available, not for all
-  systemd.services."systemd-networkd-wait-online".serviceConfig.ExecStart = [
-    "" "${config.systemd.package}/lib/systemd/systemd-networkd-wait-online --any"
-  ];
+  systemd.network.wait-online = {
+    anyInterface = true;
+  };
 
   # FIXME Restart iwd services when leaving hibernate/lock-state
 }

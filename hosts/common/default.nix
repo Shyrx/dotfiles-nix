@@ -6,7 +6,6 @@
       ./boot.nix
       ./home.nix
       ./journald.nix
-      ./network
       ./nix.nix
     ];
 
