@@ -13,10 +13,8 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     firefox
-    git
     ntfs3g # Used by udiskie
     tlp # Power managment optimization
-    udiskie # Auto-mounter for external disk
     vim
     inxi
   ];
