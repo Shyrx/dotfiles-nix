@@ -5,9 +5,7 @@
     ./media
     ./network
     ./desktop
-    ./bluetooth.nix
-    ./docker.nix
-    ./journald.nix
     ./nvidia.nix
+    ./services
   ];
 }

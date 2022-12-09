@@ -3,10 +3,10 @@
 let
   inherit (lib) mkEnableOption mkIf;
   nvidia = config.modules.nvidia;
-  cfg = config.modules.docker;
+  cfg = config.modules.services.docker;
 in
 {
-  options.modules.docker.enable = mkEnableOption "docker";
+  options.modules.services.docker.enable = mkEnableOption "docker";
 
   config = mkIf cfg.enable {
     virtualisation.docker = {
