@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  
   # Let home manager manage programs configuration for the shell
   programs.dconf.enable = true;
 
