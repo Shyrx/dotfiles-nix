@@ -3,6 +3,7 @@
 {
   imports = [
     ./bluetooth.nix
+    ./network
     ./docker.nix
     ./journald.nix
   ];

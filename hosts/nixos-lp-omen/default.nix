@@ -5,12 +5,12 @@ let
     services = {
       docker.enable = true;
       bluetooth.enable = true;
+      network = {
+        network-manager.enable = true;
+      };
     };
     hardware = {
       nvidia.enable = true;
-    };
-    network = {
-      network-manager.enable = true;
     };
     desktop = {
       x.enable = true;

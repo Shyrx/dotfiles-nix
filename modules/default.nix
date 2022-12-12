@@ -3,7 +3,6 @@
 {
   imports = [
     ./media
-    ./network
     ./desktop
     ./services
     ./hardware
