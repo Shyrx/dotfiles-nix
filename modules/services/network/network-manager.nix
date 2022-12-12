@@ -2,10 +2,10 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.modules.network.network-manager;
+  cfg = config.modules.services.network.network-manager;
 in
 {
-  options.modules.network.network-manager.enable = mkEnableOption "network-manager";
+  options.modules.services.network.network-manager.enable = mkEnableOption "network-manager";
 
   config = mkIf cfg.enable {
     networking = {
