@@ -15,6 +15,9 @@ let
     desktop = {
       x.enable = true;
     };
+    shell = {
+      zsh.enable = true;
+    };
   };
     
 in {
@@ -30,10 +33,7 @@ in {
   users.users.shyrx = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "docker" ];
-    shell = pkgs.zsh;
   };
-  
-  environment.pathsToLink = [ "/share/zsh" ];
 
   time = {
     timeZone = "Europe/Paris";

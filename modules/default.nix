@@ -4,6 +4,7 @@
   imports = [
     ./media
     ./desktop
+    ./shell
     ./services
     ./hardware
   ];
