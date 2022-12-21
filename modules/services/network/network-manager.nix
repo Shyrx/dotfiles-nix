@@ -11,10 +11,6 @@ in
     networking = {
       networkmanager = {
         enable = true;
-
-        # Unstable as of now
-        # Pages load weirdly when it's activated. At least on Firefox.
-        # wifi.powersave = true;
       };
 
       # We use networkmanager internal dhcp program
