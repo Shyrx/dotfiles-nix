@@ -3,5 +3,7 @@
 {
   imports = [
     ./x.nix
+    ./media
+    ./shell
   ];
 }

@@ -14,9 +14,9 @@ let
     };
     desktop = {
       x.enable = true;
-    };
-    shell = {
-      zsh.enable = true;
+      shell = {
+        zsh.enable = true;
+      };
     };
   };
     
