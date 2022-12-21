@@ -2,10 +2,10 @@
 
 let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.modules.shell.zsh;
+  cfg = config.modules.desktop.shell.zsh;
 in
 {
-  options.modules.shell.zsh.enable = mkEnableOption "zsh";
+  options.modules.desktop.shell.zsh.enable = mkEnableOption "zsh";
 
   config = mkIf cfg.enable {
     users.users.shyrx = {
