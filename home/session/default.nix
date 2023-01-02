@@ -9,6 +9,5 @@
     ./locker.nix
     ./picom.nix
     ./rofi
-    ./zsh.nix
   ];
 }
