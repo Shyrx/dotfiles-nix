@@ -39,6 +39,18 @@
       };
 
       nixosConfigurations = {
+        nixos-latitude = inputs.nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            inputs.home-manager.nixosModule
+
+            ./hosts/nixos-latitude
+
+            { nixpkgs.overlays = attrValues overlays; }
+          ] ++ attrValues nixosModules;
+
+          specialArgs = { inherit inputs; };
+        };
         nixos-lp-omen = inputs.nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
