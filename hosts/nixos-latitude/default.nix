@@ -2,7 +2,12 @@
 
 let
   inherit (lib) recursiveUpdate;
-  commonOptions.modules = { desktop = { shell = { zsh.enable = true; }; }; };
+  commonOptions.modules = {
+    desktop = {
+      x.enable = true;
+      shell = { zsh.enable = true; };
+    };
+  };
 
   nixosOptions.modules = {
     services = {
@@ -10,7 +15,6 @@ let
       bluetooth.enable = true;
       network = { network-manager.enable = true; };
     };
-    desktop = { x.enable = true; };
   };
 
   homeManagerOptions.modules = { };

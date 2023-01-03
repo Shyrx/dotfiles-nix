@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./shell ./gtk.nix ];
+  imports = [ ./x ./shell ./gtk.nix ];
 }
