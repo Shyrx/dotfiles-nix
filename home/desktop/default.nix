@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./shell ./alacritty.nix ];
+  imports = [ ./shell ./alacritty.nix ./gtk.nix ];
 }
