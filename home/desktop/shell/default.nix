@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-    imports = [
-        ./zsh.nix
-    ];
+  imports = [ ./alacritty.nix ./zsh.nix ];
 }
